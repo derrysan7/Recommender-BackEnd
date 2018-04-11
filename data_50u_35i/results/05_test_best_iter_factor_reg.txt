@@ -1,0 +1,65 @@
+Factors: 5
+Regularizations: 0.001
+New optimal hyperparameters
+model        <ExplicitMF.ExplicitMF instance at 0x000000000...
+n_factors                                                    5
+n_iter                                                      50
+reg                                                      0.001
+test_mse                                              0.775969
+train_mse                                             0.699106
+dtype: object
+Regularizations: 0.01
+New optimal hyperparameters
+model        <ExplicitMF.ExplicitMF instance at 0x000000000...
+n_factors                                                    5
+n_iter                                                      50
+reg                                                       0.01
+test_mse                                              0.774411
+train_mse                                             0.700211
+dtype: object
+Regularizations: 0.1
+New optimal hyperparameters
+model        <ExplicitMF.ExplicitMF instance at 0x000000000...
+n_factors                                                    5
+n_iter                                                     100
+reg                                                        0.1
+test_mse                                              0.763977
+train_mse                                             0.692077
+dtype: object
+Regularizations: 1.0
+Factors: 10
+Regularizations: 0.001
+Regularizations: 0.01
+Regularizations: 0.1
+New optimal hyperparameters
+model        <ExplicitMF.ExplicitMF instance at 0x000000000...
+n_factors                                                   10
+n_iter                                                     200
+reg                                                        0.1
+test_mse                                              0.762139
+train_mse                                             0.679542
+dtype: object
+Regularizations: 1.0
+Factors: 20
+Regularizations: 0.001
+Regularizations: 0.01
+Regularizations: 0.1
+New optimal hyperparameters
+model        <ExplicitMF.ExplicitMF instance at 0x000000000...
+n_factors                                                   20
+n_iter                                                     200
+reg                                                        0.1
+test_mse                                              0.761719
+train_mse                                             0.689204
+dtype: object
+Regularizations: 1.0
+Factors: 40
+Regularizations: 0.001
+Regularizations: 0.01
+Regularizations: 0.1
+Regularizations: 1.0
+Factors: 80
+Regularizations: 0.001
+Regularizations: 0.01
+Regularizations: 0.1
+Regularizations: 1.0

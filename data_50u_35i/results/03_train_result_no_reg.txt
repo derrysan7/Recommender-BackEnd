@@ -1,0 +1,51 @@
+Without Regularization:
+from ExplicitMF import ExplicitMF
+
+MF_SGD = ExplicitMF(train, 40, learning='sgd', verbose=True)
+iter_array = [1, 2, 5, 10, 25, 50, 100, 200]
+MF_SGD.calculate_learning_curve(iter_array, test, learning_rate=0.001)
+
+Iteration: 1
+Train mse: 0.8752063629356145
+Test mse: 0.8765809957140829
+Iteration: 2
+Train mse: 0.8603859773492043
+Test mse: 0.8651531246043279
+Iteration: 5
+Train mse: 0.8267327763242515
+Test mse: 0.8399145170534281
+Iteration: 10
+Train mse: 0.7907393105698765
+Test mse: 0.8141897551754134
+Iteration: 25
+	current iteration: 10
+Train mse: 0.7405283155053887
+Test mse: 0.781876119619642
+Iteration: 50
+	current iteration: 10
+	current iteration: 20
+Train mse: 0.7116021654002166
+Test mse: 0.7680537412135559
+Iteration: 100
+	current iteration: 10
+	current iteration: 20
+	current iteration: 30
+	current iteration: 40
+	current iteration: 50
+Train mse: 0.677868293292404
+Test mse: 0.764666785923276
+Iteration: 200
+	current iteration: 10
+	current iteration: 20
+	current iteration: 30
+	current iteration: 40
+	current iteration: 50
+	current iteration: 60
+	current iteration: 70
+	current iteration: 80
+	current iteration: 90
+	current iteration: 100
+Train mse: 0.4848495133338102
+Test mse: 0.7766119918890019
+
+----------------------------------------------------
