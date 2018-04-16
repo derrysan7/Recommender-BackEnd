@@ -215,3 +215,12 @@ class ExplicitMF():
 				print 'Train mse: ' + str(self.train_mse[-1])
 				print 'Test mse: ' + str(self.test_mse[-1])
 			iter_diff = n_iter
+			
+	def cosine_similarity(self):
+		self.sgd_sim = np.zeros((self.n_items, self.n_items))
+
+		sim = self.item_vecs.dot(self.item_vecs.T)
+		norms = np.array([np.sqrt(np.diagonal(sim))])
+		self.sgd_sim = sim / norms / norms.T
+
+		return self.sgd_sim
