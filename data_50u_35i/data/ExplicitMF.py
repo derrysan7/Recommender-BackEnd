@@ -80,7 +80,7 @@ class ExplicitMF():
 			YTY = fixed_vecs.T.dot(fixed_vecs)
 			lambdaI = np.eye(YTY.shape[0]) * _lambda
 
-			for u in xrange(latent_vectors.shape[0]):
+			for u in range(latent_vectors.shape[0]):
 				latent_vectors[u, :] = solve((YTY + lambdaI), 
 											 ratings[u, :].dot(fixed_vecs))
 		elif type == 'item':
@@ -88,7 +88,7 @@ class ExplicitMF():
 			XTX = fixed_vecs.T.dot(fixed_vecs)
 			lambdaI = np.eye(XTX.shape[0]) * _lambda
 			
-			for i in xrange(latent_vectors.shape[0]):
+			for i in range(latent_vectors.shape[0]):
 				latent_vectors[i, :] = solve((XTX + lambdaI), 
 											 ratings[:, i].T.dot(fixed_vecs))
 		return latent_vectors
@@ -119,7 +119,7 @@ class ExplicitMF():
 		ctr = 1
 		while ctr <= n_iter:
 			if ctr % 10 == 0 and self._v:
-				print '\tcurrent iteration: {}'.format(ctr)
+				print('\tcurrent iteration: {}'.format(ctr))
 			if self.learning == 'als':
 				self.user_vecs = self.als_step(self.user_vecs, 
 											   self.item_vecs, 
@@ -170,8 +170,8 @@ class ExplicitMF():
 		""" Predict ratings for every user and item."""
 		predictions = np.zeros((self.user_vecs.shape[0], 
 								self.item_vecs.shape[0]))
-		for u in xrange(self.user_vecs.shape[0]):
-			for i in xrange(self.item_vecs.shape[0]):
+		for u in range(self.user_vecs.shape[0]):
+			for i in range(self.item_vecs.shape[0]):
 				predictions[u, i] = self.predict(u, i)
 				
 		return predictions
@@ -201,7 +201,7 @@ class ExplicitMF():
 		iter_diff = 0
 		for (i, n_iter) in enumerate(iter_array):
 			if self._v:
-				print 'Iteration: {}'.format(n_iter)
+				print('Iteration: {}'.format(n_iter))
 			if i == 0:
 				self.train(n_iter - iter_diff, learning_rate)
 			else:
@@ -212,8 +212,8 @@ class ExplicitMF():
 			self.train_mse += [self.get_mse(predictions, self.ratings)]
 			self.test_mse += [self.get_mse(predictions, test)]
 			if self._v:
-				print 'Train mse: ' + str(self.train_mse[-1])
-				print 'Test mse: ' + str(self.test_mse[-1])
+				print('Train mse: ' + str(self.train_mse[-1]))
+				print('Test mse: ' + str(self.test_mse[-1]))
 			iter_diff = n_iter
 			
 	def cosine_similarity(self):
