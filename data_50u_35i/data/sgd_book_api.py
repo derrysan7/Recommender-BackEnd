@@ -36,7 +36,7 @@ def predict_item():
             k_ctr = 0
             # Start i at 1 to not grab the input book
             i = 1
-            while k_ctr < 40:
+            while k_ctr < 80:
                 book = idx_to_book[book_indices[i]]
                 book_idx_list.append(book)
                 k_ctr += 1
